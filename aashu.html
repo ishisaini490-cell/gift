@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Aashu 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&family=Indie+Flower&family=Dancing+Script&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<style>
+body{
+    text-align:center;
+    font-family:Arial, sans-serif;
+    background: linear-gradient(to right,#ffb6c1,#ffe4e1);
+    overflow-x:hidden;
+    margin:0;
+    padding:0;
+    position:relative;
+}
+
+/* Page */
+.page{
+    display:none;
+    min-height:100vh;
+    padding:50px 20px;
+}
+
+/* Active page */
+.active{
+    display:block;
+}
+
+/* Envelope lifafa box */
+.envelope{
+    background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
+    border-radius:25px;
+    padding:30px;
+    margin:50px auto;
+    max-width:90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor:pointer;
+    transition: transform 0.6s;
+}
+
+/* Flip open animation */
+.envelope.open{
+    transform: rotateX(-180deg);
+}
+
+/* Front and back of envelope */
+.envelope .front, .envelope .back{
+    backface-visibility: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.envelope .back{
+    transform: rotateX(180deg);
+    padding:30px;
+    background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+    border-radius:25px;
+}
+
+/* Fonts */
+.font1{font-family: 'Pacifico', cursive; font-size:28px; color:#ff3366;}
+.font2{font-family: 'Great Vibes', cursive; font-size:26px; color:#ff6699;}
+.font3{font-family: 'Indie Flower', cursive; font-size:24px; color:#ff4d88;}
+.font4{font-family: 'Dancing Script', cursive; font-size:25px; color:#ff1a4d;}
+.font5{font-family: 'Luckiest Guy', cursive; font-size:30px; color:#cc0066;}
+
+/* Image */
+img{
+    width:80%;
+    max-width:300px;
+    height:auto;
+    border-radius:20px;
+    margin:20px auto;
+    display:block;
+    box-shadow:0 0 25px #ff4d6d;
+}
+
+/* Button */
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    margin-top:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition:transform 0.2s, background 0.3s;
+}
+button:hover{
+    transform: scale(1.05);
+    background:#ff1a4d;
+}
+
+/* Floating hearts / stickers */
+.heart, .sticker{
+    position:absolute;
+    animation:float 5s linear infinite;
+    pointer-events:none;
+}
+
+/* Sparkles */
+.sparkle{
+    position:absolute;
+    color:yellow;
+    font-size:20px;
+    animation:sparkleAnim 2s linear infinite;
+}
+
+/* Confetti */
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    background-color: #ff3366;
+    opacity:0.8;
+    pointer-events:none;
+    z-index:9999;
+}
+
+/* Animations */
+@keyframes float{
+    0%{transform:translateY(100vh) rotate(0deg); opacity:1;}
+    100%{transform:translateY(-10vh) rotate(360deg); opacity:0;}
+}
+@keyframes sparkleAnim{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:0;transform:scale(1.5);}
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+<div class="envelope font1" onclick="openEnvelope(this)">
+    <div class="front">
+        <h1>Hey Aashu 💖</h1>
+        <p>Click to open your envelope 🎁</p>
+    </div>
+    <div class="back">
+        <p>I've made something special for you ✨🧸💌</p>
+        <button onclick="nextPage(2)">Next Envelope 🌸</button>
+    </div>
+</div>
+</div>
+
+<!-- PAGE 2: Photo -->
+<div class="page" id="page2">
+<div class="envelope font2" onclick="openEnvelope(this)">
+    <div class="front">
+        <h1>Photo Inside 🌹</h1>
+        <p>Click to open 💖</p>
+    </div>
+    <div class="back">
+        <img src="photo.jpeg" alt="Your Photo">
+        <p>Look at this 🌹🎀</p>
+        <button onclick="nextPage(3)">Next Envelope 🎉</button>
+    </div>
+</div>
+</div>
+
+<!-- PAGE 3: Gifts -->
+<div class="page" id="page3">
+<div class="envelope font3" onclick="openEnvelope(this)">
+    <div class="front">
+        <h1>Gifts Inside 🎁</h1>
+        <p>Click to open 💖</p>
+    </div>
+    <div class="back">
+        <p>💝 🌹 🍫 🎈 💐 🍬</p>
+        <p>All for you 💌🧸</p>
+        <button onclick="nextPage(4)">Next Envelope 🎀</button>
+    </div>
+</div>
+</div>
+
+<!-- PAGE 4: Sweet Message -->
+<div class="page" id="page4">
+<div class="envelope font4" onclick="openEnvelope(this)">
+    <div class="front">
+        <h1>Message Inside ✨</h1>
+        <p>Click to open 💖</p>
+    </div>
+    <div class="back">
+        <p>Thank you for being in my life, in good and tough times 💖</p>
+        <p>Every moment with you feels magical ✨🌸💝</p>
+        <button onclick="nextPage(5)">Next Envelope 💞</button>
+    </div>
+</div>
+</div>
+
+<!-- PAGE 5: Final Proposal -->
+<div class="page" id="page5">
+<div class="envelope font5" onclick="openEnvelope(this)">
+    <div class="front">
+        <h1>Final Envelope 💌</h1>
+        <p>Click to open 💖</p>
+    </div>
+    <div class="back">
+        <h1>Will You Be Mine, Aashu? 💖</h1>
+        <button onclick="showLove()">Yes ❤️</button>
+        <p id="message" style="font-size:22px;color:#ff3366;margin-top:20px;"></p>
+    </div>
+</div>
+</div>
+
+<script>
+// Flip envelope
+function openEnvelope(el){
+    el.classList.add("open");
+}
+
+// Navigate pages
+function nextPage(pageNumber){
+    var pages=document.getElementsByClassName("page");
+    for(var i=0;i<pages.length;i++){
+        pages[i].classList.remove("active");
+    }
+    document.getElementById("page"+pageNumber).classList.add("active");
+}
+
+// Final message + confetti
+function showLove(){
+    document.getElementById("message").innerHTML="Yayyy 💖 You just made me so happy, Aashu! 🌸✨🧸";
+    launchConfetti();
+}
+
+// Floating hearts / stickers
+setInterval(function(){
+    var heart=document.createElement("div");
+    heart.className="heart";
+    const emojis = ["💖","🌹","🧸","💌","🎀"];
+    heart.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+15+"px";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(heart);
+    setTimeout(function(){ heart.remove(); },5000);
+},300);
+
+// Sparkles
+setInterval(function(){
+    var sparkle=document.createElement("div");
+    sparkle.className="sparkle";
+    sparkle.innerHTML="✨";
+    sparkle.style.left=Math.random()*100+"vw";
+    sparkle.style.top=Math.random()*100+"vh";
+    sparkle.style.fontSize=Math.random()*15+10+"px";
+    document.body.appendChild(sparkle);
+    setTimeout(function(){ sparkle.remove(); },2000);
+},400);
+
+// Confetti
+function launchConfetti(){
+    for(let i=0;i<150;i++){
+        let conf = document.createElement("div");
+        conf.className="confetti";
+        conf.style.backgroundColor = ['#ff3366','#ff66aa','#ffccdd','#ffe6f0'][Math.floor(Math.random()*4)];
+        conf.style.left=Math.random()*100+"vw";
+        conf.style.top="-10px";
+        conf.style.width=(Math.random()*10+5)+"px";
+        conf.style.height=(Math.random()*10+5)+"px";
+        conf.style.opacity=Math.random()+0.5;
+        document.body.appendChild(conf);
+        let fallDuration = Math.random()*3+3;
+        conf.animate([
+            {transform: `translateY(0px)`},
+            {transform: `translateY(${window.innerHeight + 50}px) rotate(${Math.random()*360}deg)`}
+        ], {duration: fallDuration*1000, iterations:1});
+        setTimeout(()=>{ conf.remove(); }, fallDuration*1000);
+    }
+}
+</script>
+
+</body>
+</html>
